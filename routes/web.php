@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/pessoa', [PessoaController::class, 'index']);
+Route::get('/cadastro', [PessoaController::class, 'store']);
