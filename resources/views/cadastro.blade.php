@@ -10,7 +10,7 @@
     <form action={{route('pessoas.store')}} method="POST">
         @csrf
         <label>Nome: </label><input type="text" name="nome" value={{old('nome')}}><br>
-        <label>E-mail: </label><input type="email" name="email" value={{old('email')}}><br>
+        <label>Sobrenome: </label><input type="text" name="sobrenome" value={{old('email')}}><br>
         <button type="submit">Cadastrar</button>
     </form>
 </body>

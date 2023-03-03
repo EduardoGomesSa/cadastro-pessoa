@@ -14,14 +14,12 @@ class PessoaController extends Controller
         return 'Ola Mundo! Vai Corinthians!!!!';
     }
 
-    public function store(){
+    public function store(Request $request){
+        $pessoa = Pessoa::create([
+            'nome' => $request->nome,
+            'sobrenome' => $request->sobrenome,
+        ]);
 
-        dd('oiii');
-        // $pessoa = Pessoa::create([
-        //     'nome' => 'João',
-        //     'sobrenome' => 'Corinthians',
-        // ]);
-
-        //return redirect('index');
+        redirect(view('cadastro'));
     }
 }
