@@ -8,18 +8,23 @@ use Illuminate\Http\Request;
 class PessoaController extends Controller
 {
     public function index(){
-        $pessoas = Pessoa::get();
+        //$pessoas = Pessoa::get();
 
-        dd($pessoas);
-        return 'Ola Mundo! Vai Corinthians!!!!';
+        return view('cadastro');
     }
 
     public function store(Request $request){
-        $pessoa = Pessoa::create([
-            'nome' => $request->nome,
-            'sobrenome' => $request->sobrenome,
+        $validated = $request ->validate([
+            'nome' => 'required | string',
+            'sobrenome' => 'required | string',
         ]);
 
-        redirect(view('cadastro'));
+        Pessoa::create($validated);
+        // $pessoa = Pessoa::create([
+        //     'nome' => $request->nome,
+        //     'sobrenome' => $request->sobrenome,
+        // ]);
+
+        return view('cadastro');
     }
 }

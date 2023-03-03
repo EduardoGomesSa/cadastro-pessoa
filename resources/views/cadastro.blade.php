@@ -9,8 +9,16 @@
 <body>
     <form action={{route('pessoas.store')}} method="POST">
         @csrf
-        <label>Nome: </label><input type="text" name="nome" value={{old('nome')}}><br>
-        <label>Sobrenome: </label><input type="text" name="sobrenome" value={{old('email')}}><br>
+        <label>Nome: </label><input type="text" name="nome" value={{old('nome')}}>
+        @error('nome')
+            {{ $message }}
+        @enderror
+        <br>
+        <label>Sobrenome: </label><input type="text" name="sobrenome" value={{old('email')}}>
+        @error('sobrenome')
+            {{ $message }}
+        @enderror
+        <br>
         <button type="submit">Cadastrar</button>
     </form>
 </body>
