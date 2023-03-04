@@ -14,8 +14,18 @@
             {{ $message }}
         @enderror
         <br>
-        <label>Sobrenome: </label><input type="text" name="sobrenome" value={{old('email')}}>
+        <label>Sobrenome: </label><input type="text" name="sobrenome" value={{old('sobrenome')}}>
         @error('sobrenome')
+            {{ $message }}
+        @enderror
+        <br>
+        <label>E-mail: </label><input type="email" name="email" value={{old('email')}}>
+        @error('email')
+            {{ $message }}
+        @enderror
+        <br>
+        <label>Data de nascimento: </label><input type="date" name="data_nascimento" value={{old('data_nascimento')}}>
+        @error('data_nascimento')
             {{ $message }}
         @enderror
         <br>

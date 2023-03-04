@@ -17,6 +17,8 @@ class PessoaController extends Controller
         $validated = $request ->validate([
             'nome' => 'required | string',
             'sobrenome' => 'required | string',
+            'email' => 'required | email:rfc,dns',
+            'data_nascimento' => 'required | date',
         ]);
 
         Pessoa::create($validated);
