@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 class PessoaController extends Controller
 {
     public function index(){
-        //$pessoas = Pessoa::get();
+        $pessoas = Pessoa::all();
 
-        return view('cadastro');
+        return view('cadastro', [
+            'pessoas' => $pessoas,
+        ]);
     }
 
     public function store(Request $request){
@@ -22,11 +24,8 @@ class PessoaController extends Controller
         ]);
 
         Pessoa::create($validated);
-        // $pessoa = Pessoa::create([
-        //     'nome' => $request->nome,
-        //     'sobrenome' => $request->sobrenome,
-        // ]);
 
-        return view('cadastro');
+
+        return redirect()->route('pessoas.index');
     }
 }

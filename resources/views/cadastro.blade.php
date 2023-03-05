@@ -31,5 +31,27 @@
         <br>
         <button type="submit">Cadastrar</button>
     </form>
+
+    <hr>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($pessoas as $pessoa)
+            <tr>
+                <td>{{ $pessoa->nome}}</td>
+                <td>{{ $pessoa->sobrenome}}</td>
+                <td>{{ $pessoa->email}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+
 </body>
 </html>
