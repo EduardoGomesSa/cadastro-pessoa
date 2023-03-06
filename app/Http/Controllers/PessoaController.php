@@ -28,4 +28,8 @@ class PessoaController extends Controller
 
         return redirect()->route('pessoas.index');
     }
+
+    public function update(Request $request){
+        return redirect()->route('pessoas.index');
+    }
 }
