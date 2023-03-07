@@ -32,4 +32,8 @@ class PessoaController extends Controller
     public function update(Request $request){
         return redirect()->route('pessoas.index');
     }
+
+    public function delete(Request $request){
+        return redirect()->route('pessoas.index');
+    }
 }

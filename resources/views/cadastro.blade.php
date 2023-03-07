@@ -40,6 +40,7 @@
                 <th>Nome</th>
                 <th>Sobrenome</th>
                 <th>E-mail</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
