@@ -29,11 +29,19 @@ class PessoaController extends Controller
         return redirect()->route('pessoas.index');
     }
 
-    public function update(Request $request){
+    public function update(Request $request, $id){
+        Pessoa::find($id)->update([
+            'nome'=>$request->nome,
+            'sobrenome'=>$request->sobrenome,
+            'email'=>$request->email,
+            'data_nascimento'=>$request->data_nascimento]);
+
         return redirect()->route('pessoas.index');
     }
 
-    public function delete(Request $request){
+    public function delete($id){
+        Pessoa::find($id)->delete();
+
         return redirect()->route('pessoas.index');
     }
 }

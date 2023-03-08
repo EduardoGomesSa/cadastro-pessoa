@@ -49,6 +49,7 @@
                 <td>{{ $pessoa->nome}}</td>
                 <td>{{ $pessoa->sobrenome}}</td>
                 <td>{{ $pessoa->email}}</td>
+                <td>Editar | Deletar</td>
             </tr>
             @endforeach
         </tbody>
