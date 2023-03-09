@@ -40,7 +40,7 @@ class PessoaController extends Controller
         return redirect()->route('pessoas.index');
     }
 
-    public function delete($id){
+    public function destroy($id){
         Pessoa::find($id)->delete();
 
         return redirect()->route('pessoas.index');
