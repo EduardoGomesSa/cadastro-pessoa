@@ -34,7 +34,7 @@
 
     <hr>
 
-    <table border="1" align="center">
+    <table border="1">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -45,12 +45,12 @@
         </thead>
         <tbody>
             @foreach ($pessoas as $pessoa)
-            <tr>
-                <td>{{ $pessoa->nome}}</td>
-                <td>{{ $pessoa->sobrenome}}</td>
-                <td>{{ $pessoa->email}}</td>
-                <td>Editar | Deletar</td>
-            </tr>
+                <tr>
+                    <td>{{ $pessoa->nome}}</td>
+                    <td>{{ $pessoa->sobrenome}}</td>
+                    <td>{{ $pessoa->email}}</td>
+                    <td>Editar | Deletar</td>
+                </tr>
             @endforeach
         </tbody>
     </table>
