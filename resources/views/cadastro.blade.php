@@ -49,7 +49,7 @@
                     <td>{{ $pessoa->nome}}</td>
                     <td>{{ $pessoa->sobrenome}}</td>
                     <td>{{ $pessoa->email}}</td>
-                    <td>Editar | Deletar</td>
+                    <td><button>Editar</button>  | <button>Deletar</button></td>
                 </tr>
             @endforeach
         </tbody>
