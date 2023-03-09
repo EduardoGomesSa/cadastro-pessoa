@@ -25,7 +25,6 @@ class PessoaController extends Controller
 
         Pessoa::create($validated);
 
-
         return redirect()->route('pessoas.index');
     }
 
