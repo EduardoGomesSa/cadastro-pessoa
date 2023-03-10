@@ -51,7 +51,7 @@
                     <td>{{ $pessoa->email}}</td>
                     <td>
                         <button>Editar</button>  |
-                        <button type="submit" {{ route('pessoas.destroy', ['id'=>$pessoa->id]) }}>Deletar</button>
+                        <button type="submit" {{route('pessoas.destroy')}}>Deletar</button>
                     </td>
                 </tr>
             @endforeach
