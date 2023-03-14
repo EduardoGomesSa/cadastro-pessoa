@@ -51,7 +51,16 @@
                     <td>{{ $pessoa->email}}</td>
                     <td>
                         <button>Editar</button>  |
-                        <button type="submit" action={{route('pessoas.destroy')}}>Deletar</button>
+                        {{-- <button type="submit" action={{route('pessoas.destroy')}}>Deletar</button> --}}
+
+                        <a href={{ route('pessoas.destroy', [$pessoa->id]) }}
+                            onclick="event.preventDefault(); document.getElementById('delete-form-{{ $pessoa->id }}').submit();">Excluir</a>
+                        <form id="delete-form-{{ $pessoa->id }}"
+                            action="{{ route('pessoas.destroy', $pessoa->id) }}"
+                            method="POST" style="display: none;">
+                            @csrf
+                            @method('DELETE')
+                        </form>
                     </td>
                 </tr>
             @endforeach
