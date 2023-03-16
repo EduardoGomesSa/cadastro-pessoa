@@ -50,7 +50,7 @@
                     <td>{{ $pessoa->sobrenome}}</td>
                     <td>{{ $pessoa->email}}</td>
                     <td>
-                        <a href={{ route('pessoas.update'. [$pessoa->id])}}>Editar</a> |
+                        <a href={{ route('atualizacao')}}>Editar</a> |
 
                         <a href={{ route('pessoas.destroy', [$pessoa->id]) }}
                             onclick="event.preventDefault(); document.getElementById('delete-form-{{ $pessoa->id }}').submit();">Excluir</a>

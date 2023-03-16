@@ -12,5 +12,8 @@ Route::get('/', function () {
 
 Route::get('/pessoas', [PessoaController::class, 'index'])->name('pessoas.index');
 Route::post('/pessoas', [PessoaController::class, 'store'])->name('pessoas.store');
-Route::put('/pessoas', [PessoaController::class, 'update'])->name('pessoas.update');
+Route::put('/pessoas/{id}', [PessoaController::class, 'update'])->name('pessoas.update');
 Route::delete('/pessoas/{id}', [PessoaController::class, 'destroy'])->name('pessoas.destroy');
+Route::get('/atualizacao', function(){
+    return view('atualizacao');
+})->name('atualizacao');
