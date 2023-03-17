@@ -50,7 +50,14 @@
                     <td>{{ $pessoa->sobrenome}}</td>
                     <td>{{ $pessoa->email}}</td>
                     <td>
-                        <a href={{ route('atualizacao')}}>Editar</a> |
+                        <a href={{ route('atualizacao', [$pessoa->id])}}
+                            onclick="event.preventDefault(); document.getElementById('update-form-{{$pessoa->id}}').submit();">Editar</a> |
+                        <form id="update-form-{{$pessoa->id}}"
+                            action="{{route('atualizacao', $pessoa->id)}}"
+                            method="post" style="display: none;">
+                            @csrf
+                            @method('GET')
+                        </form>
 
                         <a href={{ route('pessoas.destroy', [$pessoa->id]) }}
                             onclick="event.preventDefault(); document.getElementById('delete-form-{{ $pessoa->id }}').submit();">Excluir</a>

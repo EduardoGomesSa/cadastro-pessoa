@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cadastro de Pessoas</title>
+    <title>Atualização de Pessoas</title>
 </head>
 <body>
-    <form action={{route('pessoas.update')}} method="POST">
+    <form action={{route('pessoas.update', [request()->id])}} method="POST">
         @csrf
+        @method('PUT')
         <label>Nome: </label><input type="text" name="nome" value={{old('nome')}}>
         @error('nome')
             {{ $message }}
@@ -29,7 +30,7 @@
             {{ $message }}
         @enderror
         <br>
-        <button type="submit">Cadastrar</button>
+        <button type="submit">Atualizar</button>
     </form>
 </body>
 </html>
