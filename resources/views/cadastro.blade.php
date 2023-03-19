@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro de Pessoas</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<body>
+<body class="bg-red-500">
     <form action={{route('pessoas.store')}} method="POST">
         @csrf
         <label>Nome: </label><input type="text" name="nome" value={{old('nome')}}>
