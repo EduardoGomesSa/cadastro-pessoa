@@ -14,7 +14,7 @@ class PessoaController extends Controller
             'pessoas' => $pessoas,
         ]);
 
-        //return view('cadastro', compact('pessoas'));
+        return view('cadastro', compact('pessoas'));
     }
 
     public function store(Request $request){

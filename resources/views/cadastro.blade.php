@@ -9,8 +9,8 @@
 </head>
 <body class="bg-gray-300 flex items-center flex-col">
     <main class="bg-gray-500 w-200">
-        <h1 class="bg-gray-600 font-bold">Cadastro de Pessoa</h1>
-        <form action={{route('pessoas.store')}} method="POST" class="bg-yellow-400">
+        <h1 class="bg-gray-600 font-bold text-center">Cadastro de Pessoa</h1>
+        <form action={{route('pessoas.store')}} method="POST" class="p-6">
             @csrf
             <label>Nome: </label><input type="text" name="nome" class="border border-gray-600"
              value={{old('nome')}}>
@@ -43,7 +43,7 @@
 
         <table>
             <thead>
-                <tr class="bg-gray-600 font-bold">
+                <tr class="bg-gray-600 font-bold p-6">
                     <th>Nome</th>
                     <th>Sobrenome</th>
                     <th>E-mail</th>
@@ -53,10 +53,10 @@
             <tbody>
                 @foreach ($pessoas as $pessoa)
                     <tr>
-                        <td>{{ $pessoa->nome}}</td>
-                        <td>{{ $pessoa->sobrenome}}</td>
-                        <td>{{ $pessoa->email}}</td>
-                        <td>
+                        <td class="p-3">{{ $pessoa->nome}}</td>
+                        <td class="p-3">{{ $pessoa->sobrenome}}</td>
+                        <td class="p-3">{{ $pessoa->email}}</td>
+                        <td class="p-3">
                             <a href={{ route('atualizacao', [$pessoa->id])}}
                                 onclick="event.preventDefault(); document.getElementById('update-form-{{$pessoa->id}}').submit();">Editar</a> |
                             <form id="update-form-{{$pessoa->id}}"
