@@ -11,7 +11,7 @@ class PessoaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class PessoaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nome'=>'required|string',
+            'sobrenome'=>'required|string',
+            'email'=>'required|email:rfc,dns',
+            'data_nascimento'=>'required|date',
         ];
     }
 }

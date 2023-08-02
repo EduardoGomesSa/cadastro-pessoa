@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PessoaRequest;
 use App\Models\Pessoa;
 use Illuminate\Http\Request;
 
@@ -17,25 +18,14 @@ class PessoaController extends Controller
         return view('cadastro', compact('pessoas'));
     }
 
-    public function store(Request $request){
-        $validated = $request ->validate([
-            'nome' => 'required | string',
-            'sobrenome' => 'required | string',
-            'email' => 'required | email:rfc,dns',
-            'data_nascimento' => 'required | date',
-        ]);
-
-        Pessoa::create($validated);
+    public function store(PessoaRequest $request){
+        Pessoa::create($request->all());
 
         return redirect()->route('pessoas.index');
     }
 
-    public function update(Request $request, $id){
-        Pessoa::find($id)->update([
-            'nome'=>$request->nome,
-            'sobrenome'=>$request->sobrenome,
-            'email'=>$request->email,
-            'data_nascimento'=>$request->data_nascimento]);
+    public function update(PessoaRequest $request, $id){
+        Pessoa::find($id)->update($request->all());
 
         return redirect()->route('pessoas.index');
     }
